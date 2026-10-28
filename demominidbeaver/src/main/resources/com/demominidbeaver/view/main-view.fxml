@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.demominidbeaver.controller.MainController">
+
+    <!-- Barra de Herramientas Superior -->
+    <top>
+        <ToolBar>
+            <Button text="Sincronizar desde MariaDB" onAction="#onSyncClick"/>
+            <Separator orientation="VERTICAL"/>
+            <Button text="Insertar Fila (CRUD)" onAction="#onInsertClick"/>
+            <Button text="Editar Fila (CRUD)" onAction="#onUpdateClick"/>
+            <Button text="Eliminar Fila (CRUD)" onAction="#onDeleteClick"/>
+            <Separator orientation="VERTICAL"/>
+            <Button text="Desconectar" onAction="#onDisconnectClick"/>
+        </ToolBar>
+    </top>
+
+    <!-- Panel Central Dividido: TreeView Izquierdo + Editor SQL / TableView Derecho -->
+    <center>
+        <SplitPane dividerPositions="0.25">
+            <VBox spacing="5">
+                <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+                <Label text="Navegador de Tablas (SQLite)"/>
+                <TreeView fx:id="tableTreeView" VBox.vgrow="ALWAYS"/>
+            </VBox>
+
+            <SplitPane orientation="VERTICAL" dividerPositions="0.28">
+                <VBox spacing="6">
+                    <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Consola SQL (Ejecución sobre SQLite Local):"/>
+                        <Button text="Ejecutar SQL" onAction="#onExecuteSqlClick"/>
+                    </HBox>
+                    <TextArea fx:id="sqlTextArea" promptText="Ejemplo: SELECT * FROM tu_tabla;" VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+                    <Label text="Resultados / Datos de la Tabla:"/>
+                    <TableView fx:id="dataTableView" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </SplitPane>
+        </SplitPane>
+    </center>
+
+    <!-- Barra de Estado Inferior -->
+    <bottom>
+        <HBox>
+            <padding><Insets top="5" right="10" bottom="5" left="10"/></padding>
+            <Label fx:id="statusLabel" text="Conectado."/>
+        </HBox>
+    </bottom>
+</BorderPane>
