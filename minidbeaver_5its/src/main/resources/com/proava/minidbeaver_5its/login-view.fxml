@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="10.0" alignment="CENTER" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proava.minidbeaver_5its.controlador.LoginController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Login del Proyecto">
+        <font><Font name="System Bold" size="16.0"/></font>
+    </Label>
+
+    <TitledPane text="Túnel SSH" collapsible="false">
+        <GridPane hgap="5" vgap="12">
+            <Label text="Host:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtSshHost" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+            <Label text="Port:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtSshPuerto" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="User:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtSshUser" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Pass:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="txtSshPass" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+    </TitledPane>
+
+    <TitledPane text="Server MariaDB" collapsible="false">
+        <GridPane hgap="5" vgap="12">
+            <Label text="DB Host:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtDbHost" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+            <Label text="Puerto:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtDbPuerto" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="La BD:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtDbName" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="User:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtDbUser" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Pass:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="txtDbPass" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        </GridPane>
+    </TitledPane>
+
+    <Button text="Dale Conectar" onAction="#darleConectar" maxWidth="Infinity" prefHeight="45"/>
+    <Label fx:id="lblAvisos" text="Ponga los datos prro" wrapText="true"/>
+    <Button mnemonicParsing="false" onAction="#onVerEquipoClick" text="Ver Integrantes del Equipo" />
+</VBox>

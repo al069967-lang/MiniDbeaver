@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proava.minidbeaver_5its.controlador.IntegrantesController">
+    <children>
+        <!-- Título de la vista -->
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Integrantes del Equipo" />
+
+        <!-- Contenedor para la lista de integrantes -->
+        <VBox alignment="CENTER" maxWidth="450.0" spacing="10.0" style="-fx-background-color: #f4f4f4; -fx-padding: 20px; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+            <children>
+                <Label style="-fx-font-size: 15px;" text="Jose M Castillo Dzib - 75465" />
+                <Label style="-fx-font-size: 15px;" text="Andres Paredes Gomez - 70266" />
+                <Label style="-fx-font-size: 15px;" text="Erbet Gomez Bohorquez - 69338" />
+                <Label style="-fx-font-size: 15px;" text="Cesar R Ramirez Cab - 69967" />
+            </children>
+        </VBox>
+
+        <!-- Botón para regresar o salir -->
+        <HBox alignment="CENTER" spacing="15.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onRegresarClick" text="Regresar" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

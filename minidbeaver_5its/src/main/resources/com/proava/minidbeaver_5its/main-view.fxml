@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proava.minidbeaver_5its.controlador.AppController">
+    <top>
+        <ToolBar>
+            <Button text="Bajar de Nube" onAction="#onSync"/>
+            <Separator/>
+            <Button text="Nuevo" onAction="#onAdd"/>
+            <Button text="Editar" onAction="#onEdit"/>
+            <Button text="Eliminar" onAction="#onDel"/>
+            <Separator/>
+            <Button text="Bye" onAction="#onSalirBtn"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.25">
+            <VBox spacing="3">
+                <padding><Insets top="5" right="5" bottom="5" left="5"/></padding>
+                <Label text="Tablitas locales"/>
+                <TreeView fx:id="arbolTablas" VBox.vgrow="ALWAYS"/>
+            </VBox>
+
+            <SplitPane orientation="VERTICAL" dividerPositions="0.25">
+                <VBox spacing="5">
+                    <padding><Insets top="5" right="5" bottom="5" left="5"/></padding>
+                    <HBox spacing="10">
+                        <Label text="Query manual:"/>
+                        <Button text="Run" onAction="#onCorrerQuery"/>
+                    </HBox>
+                    <TextArea fx:id="txtSql" promptText="select * from patito..." VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+                <VBox spacing="2">
+                    <padding><Insets top="5" right="5" bottom="5" left="5"/></padding>
+                    <Label text="Registros:"/>
+                    <TableView fx:id="tablaDatos" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </SplitPane>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <HBox>
+            <padding><Insets top="5" right="5" bottom="5" left="5"/></padding>
+            <Label fx:id="statusAbajo" text="Todo ready."/>
+        </HBox>
+    </bottom>
+</BorderPane>
